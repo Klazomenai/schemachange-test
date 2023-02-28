@@ -16,7 +16,8 @@ jobs:
         case "${{ github.event.inputs.count }}" in
           *[0-9]*) echo "info: COUNT: ${{ github.event.inputs.count }}" ;;
           "") echo "info COUNT is empty: ${{ github.event.inputs.count }}" ;;
-          *) echo "info: COUNT is not a number: ${{ github.event.inputs.count }}" ;;
+          *) echo "info: COUNT is not a number: ${{ github.event.inputs.count }}"; \
+             exit 1 ;;
         esac
 #        if [ -z "${{ github.event.inputs.count }}" ]; then
 #          echo "info: ${{ github.event.inputs.count }} is NULL, continuing with count calculations"
