@@ -14,12 +14,12 @@ jobs:
     steps:
     - run: |
         if [ -z "${{ github.event.inputs.count }}" ]; then
-          echo "${{ github.event.inputs.count }} is NULL, continuing with count calculations"
+          echo "info: ${{ github.event.inputs.count }} is NULL, continuing with count calculations"
         else
-          echo "${{ github.event.inputs.count }} is NOT NULL"
+          echo "info: ${{ github.event.inputs.count }} is NOT NULL"
           if [[ "${{ github.event.inputs.count }}" =~ '^[0-9]+$' ]]; then
-            echo " ${{ github.event.inputs.count }} looks like a number"
+            echo "info: ${{ github.event.inputs.count }} is a number"
           else
-            echo "error: ${{ github.event.inputs.count }} is not a number" >&2; exit 1
+            echo "error: ${{ github.event.inputs.count }} is NOT a number" >&2; exit 1
           fi
         fi
