@@ -13,11 +13,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - run: |
-        export COUNT=2
-        case $COUNT in
-          ''|*[!0-9]*) echo info: COUNT: $COUNT is NULL, continuing with count calculations; \
+        case ${{ github.event.inputs.count }} in
+          ''|*[!0-9]*) echo info: COUNT: ${{ github.event.inputs.count }} is NULL, continuing with count calculations; \
                        echo counting... ;;
-          *) echo COUNT: $COUNT ;;
+          *) echo COUNT: ${{ github.event.inputs.count }} ;;
         esac
 #        if [ -z "${{ github.event.inputs.count }}" ]; then
 #          echo "info: ${{ github.event.inputs.count }} is NULL, continuing with count calculations"
