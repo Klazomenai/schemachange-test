@@ -1,0 +1,21 @@
+name: Workflow dispatch test
+
+on:
+  workflow_dispatch:
+    inputs:
+      count:
+        description: 'Test count'
+        required: true
+        default: NULL
+
+jobs:
+  testCount:
+    runs-on: ubuntu-latest
+    steps:
+    - run: |
+      if [ -z "${{ github.event.inputs.count }}" ]; then
+        echo "${{ github.event.inputs.count }} is NULL"
+      else
+        echo "${{ github.event.inputs.count }} is NOT NULL"
+      fi
+
