@@ -17,7 +17,7 @@ jobs:
           echo "info: ${{ github.event.inputs.count }} is NULL, continuing with count calculations"
         else
           echo "info: ${{ github.event.inputs.count }} is NOT NULL"
-          if [[ '${{ github.event.inputs.count }}' =~ '^[0-9]+$' ]]; then
+          if [[ ${{ github.event.inputs.count }} =~ ^[0-9]+$ ]]; then
             echo "info: ${{ github.event.inputs.count }} is a number"
           else
             echo "error: ${{ github.event.inputs.count }} is NOT a number"
