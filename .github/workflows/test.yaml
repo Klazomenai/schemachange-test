@@ -6,7 +6,7 @@ on:
       count:
         description: 'Test count'
         required: false
-        default: NULL
+        default: ""
 
 jobs:
   testCount:
@@ -14,9 +14,9 @@ jobs:
     steps:
     - run: |
         case "${{ github.event.inputs.count }}" in
-          ''|*[!0-9]*) echo "info: COUNT: ${{ github.event.inputs.count }} is NULL, continuing with count calculations"; \
-                       echo counting... ;;
-          *) echo COUNT: "${{ github.event.inputs.count }}" ;;
+          *[!0-9]*) echo "info: COUNT: ${{ github.event.inputs.count }}" ;;
+          "") echo "info COUNT is empty: ${{ github.event.inputs.count }}" ;;
+          *) echo "info: COUNT is not a number: ${{ github.event.inputs.count }}" ;;
         esac
 #        if [ -z "${{ github.event.inputs.count }}" ]; then
 #          echo "info: ${{ github.event.inputs.count }} is NULL, continuing with count calculations"
