@@ -13,9 +13,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - run: |
-      if [ -z "${{ github.event.inputs.count }}" ]; then
-        echo "${{ github.event.inputs.count }} is NULL"
-      else
-        echo "${{ github.event.inputs.count }} is NOT NULL"
-      fi
+        if [ -z "${{ github.event.inputs.count }}" ]
+        then
+          echo "${{ github.event.inputs.count }} is NULL"
+        else
+          echo "${{ github.event.inputs.count }} is NOT NULL"
+        fi
 
