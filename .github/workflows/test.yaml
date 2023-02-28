@@ -5,7 +5,7 @@ on:
     inputs:
       count:
         description: 'Test count'
-        required: true
+        required: false
         default: NULL
 
 jobs:
