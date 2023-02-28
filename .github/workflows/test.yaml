@@ -14,7 +14,7 @@ jobs:
     steps:
     - run: |
         case "${{ github.event.inputs.count }}" in
-          *[!0-9]*) echo "info: COUNT: ${{ github.event.inputs.count }}" ;;
+          *[0-9]*) echo "info: COUNT: ${{ github.event.inputs.count }}" ;;
           "") echo "info COUNT is empty: ${{ github.event.inputs.count }}" ;;
           *) echo "info: COUNT is not a number: ${{ github.event.inputs.count }}" ;;
         esac
