@@ -16,7 +16,7 @@ jobs:
       run: |
         case "${{ github.event.inputs.count }}" in
           *[0-9]*) echo "info: COUNT: ${{ github.event.inputs.count }}"; \
-                   echo "CALC=$(echo ${{ github.event.inputs.count }} - 2 | bc)" ;; >> $GITHUB_ENV
+                   echo "CALC=$(echo ${{ github.event.inputs.count }} - 2 | bc)" >> $GITHUB_ENV ;;
           "") echo "info COUNT is empty: ${{ github.event.inputs.count }}" ;;
           *) echo "info: COUNT is not a number: ${{ github.event.inputs.count }}"; \
              exit 1 ;;
