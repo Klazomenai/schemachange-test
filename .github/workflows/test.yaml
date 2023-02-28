@@ -14,11 +14,11 @@ jobs:
     steps:
     - name: case
       run: |
-        case "${{ github.event.inputs.count }}" in
-          *[0-9]*) echo "info: COUNT: ${{ github.event.inputs.count }}"; \
-                   echo "CALC=$(echo ${{ github.event.inputs.count }} - 2 | bc)" >> $GITHUB_ENV ;;
-          "") echo "info COUNT is empty: ${{ github.event.inputs.count }}" ;;
-          *) echo "info: COUNT is not a number: ${{ github.event.inputs.count }}"; \
+        case "${{ inputs.count }}" in
+          *[0-9]*) echo "info: COUNT: ${{ inputs.count }}"; \
+                   echo "CALC=$(echo ${{ inputs.count }} - 2 | bc)" >> $GITHUB_ENV ;;
+          "") echo "info COUNT is empty: ${{ inputs.count }}" ;;
+          *) echo "info: COUNT is not a number: ${{ inputs.count }}"; \
              exit 1 ;;
         esac
 
