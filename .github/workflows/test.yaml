@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - run: |
-        export COUNT = 2
+        export COUNT=2
         case $COUNT in
           ''|*[!0-9]*) echo info: COUNT: $COUNT is NULL, continuing with count calculations; \
                        echo counting... ;;
