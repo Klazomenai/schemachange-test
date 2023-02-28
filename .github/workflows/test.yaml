@@ -13,10 +13,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - run: |
-        if [ -z "${{ github.event.inputs.count }}" ]
+        if [ -z ${{ github.event.inputs.count }} ]
         then
           echo "${{ github.event.inputs.count }} is NULL"
         else
           echo "${{ github.event.inputs.count }} is NOT NULL"
+        fi
+        if ! [[ ${{ github.event.inputs.count }} =~ '^[0-9]+$' ]]; then
+          echo "error: Not a number" >&2; exit 1
         fi
 
