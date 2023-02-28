@@ -12,7 +12,7 @@ jobs:
   testCount:
     runs-on: ubuntu-latest
     steps:
-      name: case
+    - name: case
       run: |
         case "${{ github.event.inputs.count }}" in
           *[0-9]*) echo "info: COUNT: ${{ github.event.inputs.count }}"; \
