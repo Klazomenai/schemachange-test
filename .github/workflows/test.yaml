@@ -16,8 +16,8 @@ jobs:
       run: |
         case "${{ inputs.count }}" in
           *[0-9]) echo "info: COUNT: ${{ inputs.count }}"; \
-                  echo "CALC=$(echo ${{ inputs.count }} - 2 | bc --standard)"; >> $GITHUB_ENV \
                   echo "A=aaa"; >> $GITHUB_ENV \
+                  echo "CALC=$(echo ${{ inputs.count }} - 2 | bc --standard)"; >> $GITHUB_ENV \
                   echo "B=bbb"; >> $GITHUB_ENV \
                   echo "C=ccc" >> $GITHUB_ENV ;;
           "") echo "info COUNT is empty: ${{ inputs.count }}" ;;
